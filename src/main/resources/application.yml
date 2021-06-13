@@ -1,0 +1,36 @@
+
+
+spring:
+  profiles:
+    active: dev
+    default: dev
+  application:
+    name: SecJavaBackEnd13
+  datasource:
+    url: jdbc:postgresql://localhost:54321/testaccessresources
+    username: members
+    password:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+
+  flyway:
+    enabled: true
+    user: members
+    password:
+    url: jdbc:postgresql://localhost:54321/testaccessresources
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+---
+
+spring:
+  profiles:
+    active: test
+  application:
+    name: SecJavaBackEnd14
+
+prenom: bernard
+
