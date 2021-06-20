@@ -10,6 +10,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 @SpringJUnitConfig(value = Config1.class)
 public class TestAccessRessourceInTest {
 
+    
     @Autowired
     String version;
 
