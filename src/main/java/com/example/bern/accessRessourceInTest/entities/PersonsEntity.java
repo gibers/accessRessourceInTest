@@ -3,8 +3,9 @@ package com.example.bern.accessRessourceInTest.entities;
 import javax.persistence.*;
 import java.util.Objects;
 
+//catalog = "testaccessresources"
 @Entity
-@Table(name = "persons", schema = "public", catalog = "testaccessresources")
+@Table(name = "persons", schema = "public" )
 public class PersonsEntity {
     private long idPersons;
     private String vorname;
@@ -12,6 +13,7 @@ public class PersonsEntity {
     private String email;
 
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "id_persons", nullable = false)
     public long getIdPersons() {
         return idPersons;
@@ -22,7 +24,7 @@ public class PersonsEntity {
     }
 
     @Basic
-    @Column(name = "vorname", nullable = true, length = -1)
+    @Column(name = "vorname", nullable = true)
     public String getVorname() {
         return vorname;
     }
@@ -32,7 +34,7 @@ public class PersonsEntity {
     }
 
     @Basic
-    @Column(name = "name", nullable = true, length = -1)
+    @Column(name = "name", nullable = true)
     public String getName() {
         return name;
     }
@@ -42,7 +44,7 @@ public class PersonsEntity {
     }
 
     @Basic
-    @Column(name = "email", nullable = false, length = -1)
+    @Column(name = "email", nullable = false, unique = true)
     public String getEmail() {
         return email;
     }

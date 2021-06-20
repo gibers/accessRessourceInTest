@@ -1,0 +1,32 @@
+
+
+spring:
+#  profiles:
+#    active: test
+  application:
+    name: SecJavaBackEnd14
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:manageaccount
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+
+
+  flyway:
+    enabled: false
+
+prenom: bernarde
+
+
